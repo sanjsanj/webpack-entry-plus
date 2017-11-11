@@ -1,0 +1,9 @@
+# FILES
+.eslintrc.js
+.gitignore
+.npmignore
+
+# DIRECTORIES
+.github
+node_modules
+specs
