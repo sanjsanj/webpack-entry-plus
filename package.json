@@ -4,7 +4,7 @@
   "description": "Generate dynamic webpack bundle output names from known or unknown entry files",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest && codecov",
     "test:watch": "jest --watch"
   },
   "repository": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/sanjsanj/webpack-entry-plus#readme",
   "devDependencies": {
+    "codecov": "^3.0.0",
     "eslint": "^4.11.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -33,5 +34,9 @@
   },
   "dependencies": {
     "glob": "^7.1.2"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }

@@ -1,4 +1,5 @@
 codecov:
+  token: 4a6d7bec-b677-41b3-80c8-5fb63923b86b
   branch: master
   notify:
     require_ci_to_pass: yes

@@ -8,3 +8,4 @@
 .github
 node_modules
 specs
+coverage
