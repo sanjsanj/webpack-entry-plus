@@ -2,6 +2,7 @@
 .eslintrc.js
 .gitignore
 .npmignore
+.travis.yml
 
 # DIRECTORIES
 .github

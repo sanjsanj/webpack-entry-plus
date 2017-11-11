@@ -10,7 +10,20 @@ Install with npm:
 npm install --save-dev webpack-entry-plus
 ```
 
-## Usage
+## API
+
+Must be passed an argument which is an array of objects that comply to this schema:
+
+```
+[
+  {
+    entryFiles: Array of String(s),
+    outputName: String or Function that returns String,
+  },
+]
+```
+
+## Example Usage
 
 In your webpack.config.js first `import` or `require` the package, e.g:
 
@@ -41,7 +54,7 @@ const entryFiles = [
   {
     entryFiles: glob.sync('./Folder1/**/*.js'),
     outputName(item) {
-      return item.replace('Folder1/', '../').replace('.js', '.min');
+      return item.replace('Folder1/', '../');
     },
   },
 ];
