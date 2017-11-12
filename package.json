@@ -1,6 +1,6 @@
 {
   "name": "webpack-entry-plus",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Generate dynamic webpack bundle output names from known or unknown entry files",
   "main": "index.js",
   "scripts": {
