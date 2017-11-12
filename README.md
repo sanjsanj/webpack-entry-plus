@@ -1,6 +1,6 @@
 # webpack-entry-plus
 
-Generate dynamic webpack bundle output names from known or unknown entry files.
+Generate dynamic webpack bundle output names from wildcarded entry files.
 
 
 [![NPM](https://nodei.co/npm/webpack-entry-plus.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/webpack-entry-plus/)
@@ -11,9 +11,7 @@ Generate dynamic webpack bundle output names from known or unknown entry files.
 
 ## Why?
 
-This package solves the problem of not knowing (or wanting to hardcode) all of our entry files and output bundles' names.
-
-It allows us to configure webpack to process and bundle files we want to add at a later date, e.g. for future functionality.  Particularly useful if you're using a CMS system, or not building a SPA.
+This package solves the problem of not knowing (or wanting to hardcode) all of our output bundles' names.  Particularly useful if you're building a CMS-based architecture or multi-page app.  [Read more about it here](https://medium.com/@sanjsanj/webpack-creating-dynamically-named-outputs-for-wildcarded-entry-files-9241f596b065).
 
 ## Install
 
@@ -25,7 +23,7 @@ npm install --save-dev webpack-entry-plus
 
 ## API
 
-Must be passed an argument which is an [ `Array` of { `Objects` } ] that comply to this schema:
+Must be passed an argument which is an `[ Array of { Objects } ]` that comply to this schema:
 
 ```
 [
