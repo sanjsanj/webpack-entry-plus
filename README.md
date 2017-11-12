@@ -3,7 +3,7 @@
 Generate dynamic webpack bundle output names from known or unknown entry files.
 
 
-[![NPM](https://nodei.co/npm/webpack-entry-plus.png?compact=true)](https://nodei.co/npm/webpack-entry-plus/)
+[![NPM](https://nodei.co/npm/webpack-entry-plus.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/webpack-entry-plus/)
 
 
 [![Build Status](https://travis-ci.org/sanjsanj/webpack-entry-plus.svg?branch=master)](https://travis-ci.org/sanjsanj/webpack-entry-plus)  [![codecov](https://codecov.io/gh/sanjsanj/webpack-entry-plus/branch/master/graph/badge.svg)](https://codecov.io/gh/sanjsanj/webpack-entry-plus)
@@ -19,7 +19,7 @@ npm install --save-dev webpack-entry-plus
 
 ## API
 
-Must be passed an argument which is an array of objects that comply to this schema:
+Must be passed an argument which is an [ Array of { Objects } ] that comply to this schema:
 
 ```
 [
@@ -33,15 +33,18 @@ Must be passed an argument which is an array of objects that comply to this sche
 If you want to use wildcard matchers to include unknown files, use the included `glob` package like so:
 
 ```
+// import glob
+const glob = require('glob');
+
 [
   {
-    entryFiles: glob.sync('./Folder1/**.js'),
+    entryFiles: glob.sync('./Folder1/*.js'),
     outputName: String or Function that returns String,
   },
 ]
 ```
 
-If you want to have a dynamic output name, pass a function in to `outputName` that returns the `[name]` you want to use:
+If you want to have a dynamic output name, pass a function in to `outputName` that returns the `[name]` you want to use.  The argument, `(item)` in this example, is the absolute filepath for the file being processed:
 
 ```
 [
@@ -58,16 +61,15 @@ If you want to have a dynamic output name, pass a function in to `outputName` th
 
 ## Example Usage
 
-In your webpack.config.js first `import` or `require` the package and glob for wildcard matching, e.g:
-
 ```
+// webpack.config.js
+// First `import` or `require` this package and glob for wildcard matching, e.g:
+
 const entryPlus = require('webpack-entry-plus');
 const glob = require('glob');
-```
 
-Then create an array of objects containing your entry files:
+// Then create an array of objects containing your entry files:
 
-```
 const entryFiles = [
   {
     entryFiles: ['file1.js'],
@@ -92,11 +94,9 @@ const entryFiles = [
     },
   },
 ];
-```
 
 Then pass the function in to the `entry` point of your config:
 
-```
 module.exports = {
   entry: entryPlus(entryFiles),
 
@@ -107,3 +107,7 @@ module.exports = {
   ...
 }
 ```
+
+If you have any issues using this package, have feature requests or any feedback for me get in touch via github.
+
+Thank you.
