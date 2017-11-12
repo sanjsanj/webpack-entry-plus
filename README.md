@@ -6,7 +6,7 @@ Generate dynamic webpack bundle output names from known or unknown entry files.
 [![NPM](https://nodei.co/npm/webpack-entry-plus.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/webpack-entry-plus/)
 
 
-[![Build Status](https://travis-ci.org/sanjsanj/webpack-entry-plus.svg?branch=master)](https://travis-ci.org/sanjsanj/webpack-entry-plus)  [![codecov](https://codecov.io/gh/sanjsanj/webpack-entry-plus/branch/master/graph/badge.svg)](https://codecov.io/gh/sanjsanj/webpack-entry-plus)
+[![Build Status](https://travis-ci.org/sanjsanj/webpack-entry-plus.svg?branch=master)](https://travis-ci.org/sanjsanj/webpack-entry-plus)  [![codecov](https://codecov.io/gh/sanjsanj/webpack-entry-plus/branch/master/graph/badge.svg)](https://codecov.io/gh/sanjsanj/webpack-entry-plus)  [![NSP Status](https://nodesecurity.io/orgs/sanjsanj/projects/893609ae-4480-4dc0-b7d6-db0499c386eb/badge)](https://nodesecurity.io/orgs/sanjsanj/projects/893609ae-4480-4dc0-b7d6-db0499c386eb)
 
 
 ## Install
