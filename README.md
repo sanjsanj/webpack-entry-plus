@@ -9,6 +9,12 @@ Generate dynamic webpack bundle output names from known or unknown entry files.
 [![Build Status](https://travis-ci.org/sanjsanj/webpack-entry-plus.svg?branch=master)](https://travis-ci.org/sanjsanj/webpack-entry-plus)  [![codecov](https://codecov.io/gh/sanjsanj/webpack-entry-plus/branch/master/graph/badge.svg)](https://codecov.io/gh/sanjsanj/webpack-entry-plus)  [![NSP Status](https://nodesecurity.io/orgs/sanjsanj/projects/893609ae-4480-4dc0-b7d6-db0499c386eb/badge)](https://nodesecurity.io/orgs/sanjsanj/projects/893609ae-4480-4dc0-b7d6-db0499c386eb)
 
 
+## Why?
+
+This package solves the problem of not knowing (or wanting to hardcode) all of our entry files and output bundles' names.
+
+It allows us to configure webpack to process and bundle files we want to add at a later date, e.g. for future functionality.  Particularly useful if you're using a CMS system, or not building a SPA.
+
 ## Install
 
 Install with npm:
@@ -19,18 +25,18 @@ npm install --save-dev webpack-entry-plus
 
 ## API
 
-Must be passed an argument which is an [ Array of { Objects } ] that comply to this schema:
+Must be passed an argument which is an [ `Array` of { `Objects` } ] that comply to this schema:
 
 ```
 [
   {
     entryFiles: Array of String(s),
-    outputName: String or Function that returns String,
+    outputName: String, or Function that returns a String,
   },
 ]
 ```
 
-If you want to use wildcard matchers to include unknown files, use the included `glob` package like so:
+If we want to use wildcard matchers to include unknown files, use the included `glob` package like so:
 
 ```
 // import glob
@@ -44,7 +50,7 @@ const glob = require('glob');
 ]
 ```
 
-If you want to have a dynamic output name, pass a function in to `outputName` that returns the `[name]` you want to use.  The argument, `(item)` in this example, is the absolute filepath for the file being processed:
+If we want to create a dynamic output name, pass a function in to `outputName` that takes one argument and returns the `[name]` we want to use.  The argument, `(item)` in this example, is the filepath for the file being processed:
 
 ```
 [
@@ -52,23 +58,27 @@ If you want to have a dynamic output name, pass a function in to `outputName` th
     entryFiles: Array of String(s),
     outputName(item) {
       return item.replace('unwanted text', 'text');
-      // or any other string transform you want
-      // must return a string which will be the [name] in your output
+      // or any other string transform we want
+      // must return a string which will become the [name] in our output
     },
   },
 ]
 ```
 
+- If we pass a String in to `outputName` it will bundle all the `entryFiles` in to one.
+
+- If we pass a Function in to `outputName` it will process each entry file in to it's own bundle, using the returned value of `outputName(entryFile[singular])` as the `[name]` in webpack's output object.
+
 ## Example Usage
 
 ```
 // webpack.config.js
-// First `import` or `require` this package and glob for wildcard matching, e.g:
+// First `import` or `require` this package, and glob for wildcard matching, e.g:
 
 const entryPlus = require('webpack-entry-plus');
 const glob = require('glob');
 
-// Then create an array of objects containing your entry files:
+// Then create an Array of Objects containing our entry files:
 
 const entryFiles = [
   {
@@ -80,7 +90,7 @@ const entryFiles = [
     outputName: 'bundle2',
   },
   {
-    entryFiles: ['react', 'react-dom'],
+    entryFiles: ['react', 'react-dom'],  // node modules work too
     outputName: 'react',
   },
   {
@@ -88,14 +98,14 @@ const entryFiles = [
     outputName: 'core',
   },
   {
-    entryFiles: glob.sync('./Folder1/**/*.js'),
+    entryFiles: glob.sync('./Folder1/**/*-entry.js'),
     outputName(item) {
       return item.replace('Folder1/', '../');
     },
   },
 ];
 
-Then pass the function in to the `entry` point of your config:
+Then pass the function in to the `entry` point of our config:
 
 module.exports = {
   entry: entryPlus(entryFiles),
@@ -107,7 +117,3 @@ module.exports = {
   ...
 }
 ```
-
-If you have any issues using this package, have feature requests or any feedback for me get in touch via github.
-
-Thank you.
