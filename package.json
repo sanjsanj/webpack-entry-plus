@@ -4,7 +4,7 @@
   "description": "Generate dynamic webpack bundle output names from known or unknown entry files",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest && codecov",
     "test:watch": "jest --watch"
   },
   "repository": {
