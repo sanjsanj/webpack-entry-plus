@@ -1,4 +1,4 @@
-const entryObject = params => params.reduce((acc, item) => {
+module.exports = params => params.reduce((acc, item) => {
   if (typeof item.outputName === 'function') {
     item.entryFiles.map(entry => acc[item.outputName(entry)] = entry);
   } else {
@@ -6,5 +6,3 @@ const entryObject = params => params.reduce((acc, item) => {
   }
   return acc;
 }, {});
-
-module.exports = entryObject;
