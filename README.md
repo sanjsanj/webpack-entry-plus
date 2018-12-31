@@ -2,12 +2,11 @@
 
 Generate dynamic webpack bundle output names from wildcarded entry files.
 
-
 [![NPM](https://nodei.co/npm/webpack-entry-plus.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/webpack-entry-plus/)
 
-
+[![NPM Monthly Downloads](https://img.shields.io/npm/dm/localeval.svg)](https://npmjs.com/package/webpack-entry-plus)
+[![Code Size](https://img.shields.io/bundlephobia/minzip/react.svg)](https://github.com/sanjsanj/webpack-entry-plus/blob/master/src/entry-plus.js)
 [![Build Status](https://travis-ci.org/sanjsanj/webpack-entry-plus.svg?branch=master)](https://travis-ci.org/sanjsanj/webpack-entry-plus)  [![codecov](https://codecov.io/gh/sanjsanj/webpack-entry-plus/branch/master/graph/badge.svg)](https://codecov.io/gh/sanjsanj/webpack-entry-plus)
-
 
 ## Why?
 
