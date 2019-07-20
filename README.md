@@ -4,13 +4,12 @@ Generate dynamic webpack bundle output names from wildcarded entry files.
 
 [![NPM](https://nodei.co/npm/webpack-entry-plus.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/webpack-entry-plus/)
 
-[![NPM Downloads](https://img.shields.io/npm/dt/localeval.svg)](https://npmjs.com/package/webpack-entry-plus)
 [![Code Size](https://img.shields.io/bundlephobia/minzip/react.svg)](https://github.com/sanjsanj/webpack-entry-plus/blob/master/src/entry-plus.js)
-[![Build Status](https://travis-ci.org/sanjsanj/webpack-entry-plus.svg?branch=master)](https://travis-ci.org/sanjsanj/webpack-entry-plus)  [![codecov](https://codecov.io/gh/sanjsanj/webpack-entry-plus/branch/master/graph/badge.svg)](https://codecov.io/gh/sanjsanj/webpack-entry-plus)
+[![Build Status](https://travis-ci.org/sanjsanj/webpack-entry-plus.svg?branch=master)](https://travis-ci.org/sanjsanj/webpack-entry-plus) [![codecov](https://codecov.io/gh/sanjsanj/webpack-entry-plus/branch/master/graph/badge.svg)](https://codecov.io/gh/sanjsanj/webpack-entry-plus)
 
 ## Why?
 
-This package solves the problem of not knowing (or wanting to hardcode) all of our output bundles' names.  Particularly useful if you're building a CMS-based architecture or multi-page app.  [Read more about it here](https://medium.com/@sanjsanj/webpack-creating-dynamically-named-outputs-for-wildcarded-entry-files-9241f596b065).
+This package solves the problem of not knowing (or wanting to hardcode) all of our output bundles' names. Particularly useful if you're building a CMS-based architecture or multi-page app. [Read more about it here](https://medium.com/@sanjsanj/webpack-creating-dynamically-named-outputs-for-wildcarded-entry-files-9241f596b065).
 
 ## Install
 
@@ -47,7 +46,7 @@ const glob = require('glob');
 ]
 ```
 
-If we want to create a dynamic output name, pass a function in to `outputName` that takes one argument and returns the `[name]` we want to use.  The argument, `(item)` in this example, is the filepath for the file being processed:
+If we want to create a dynamic output name, pass a function in to `outputName` that takes one argument and returns the `[name]` we want to use. The argument, `(item)` in this example, is the filepath for the file being processed:
 
 ```
 [
