@@ -1,10 +1,10 @@
 {
   "name": "webpack-entry-plus",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Generate dynamic webpack bundle output names from known or unknown entry files",
   "main": "index.js",
   "scripts": {
-    "publish": "npm test && git push && npm publish",
+    "push": "npm test && git push && npm publish",
     "test": "jest && codecov",
     "test:watch": "jest --watch"
   },
