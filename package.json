@@ -1,6 +1,6 @@
 {
   "name": "webpack-entry-plus",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Generate dynamic webpack bundle output names from known or unknown entry files",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "jest": "^24.8.0"
+    "jest": "^26.6.3"
   },
   "dependencies": {
     "glob": "^7.1.2"
